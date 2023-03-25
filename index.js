@@ -165,7 +165,7 @@ app.get('/post/:id', async (req, res) => {
 
 async function connect() {
     try {
-        await mongoose.connect(process.env.DATABASE, {
+        await mongoose.connect(process.env.DATABASE2, {
     //await mongoose.connect("mongodb+srv://ansh:VqWD0mRC8hWgdVsp@cluster0.nsmokc2.mongodb.net/?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -181,7 +181,7 @@ connect()
 const PORT = process.env.PORT || 4000
 
 app.listen(PORT, () => {
-    console.log("server running on port 4000.....")
+    console.log(`server running on port ${PORT}.....`)
 })
 
 
