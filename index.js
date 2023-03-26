@@ -15,8 +15,7 @@ const Post = require('./models/Post')
 
 const app = express()
 
-app.use(cors({credentials: true, origin: "*"/* ['http://localhost:3000', 
-'https://blogansh.onrender.com/' ]*/}))
+app.use(cors({credentials: true, origin: 'https://blogansh.onrender.com/'}))
 app.use(express.json())
 app.use(cookieParser())
 app.use('/uploads', express.static(__dirname + '/uploads'))
