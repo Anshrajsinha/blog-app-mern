@@ -84,13 +84,13 @@ app.post('/logout', (req, res) => {
 
 app.post('/post', /* upload.single('file'), */ async (req, res) => {
   try {
-    const {originalname, path} = req.file
+    /* const {originalname, path} = req.file
     const parts = originalname.split(".")
     const ext = parts[parts.length - 1]
     const newPath = path+'.'+ext
     fs.rename(path, newPath, () => {
         console.log('file renamed')
-    })
+    }) */
 
     const {token} = req.cookies
     jwt.verify(token, secret, {}, async (err, info) => {
@@ -100,7 +100,7 @@ app.post('/post', /* upload.single('file'), */ async (req, res) => {
             title,
             summary,
             content,
-            cover: newPath,
+            cover: 'abc',
             author: info.id
         })
         res.json(postDoc)
