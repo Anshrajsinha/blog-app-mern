@@ -111,6 +111,7 @@ app.post('/post', /* upload.single('file'), */ async (req, res) => {
     //console.log(ext)
   } catch (err) {
     res.status(250).json(err)
+    console.log(err)
     console.log('post creation failed')
   }
 })
