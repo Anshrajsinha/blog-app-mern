@@ -8,7 +8,7 @@ const multer = require('multer')
 const fs = require('fs')
 require('dotenv').config()
 
-const upload = multer({ dest: 'uploads/' })
+//const upload = multer({ dest: 'uploads/' })
 
 const User = require('./models/User')
 const Post = require('./models/Post')
@@ -82,7 +82,7 @@ app.post('/logout', (req, res) => {
     res.cookie('token', '').json('okaayyyddoookeee')
 })
 
-app.post('/post', upload.single('file'), async (req, res) => {
+app.post('/post', /* upload.single('file'), */ async (req, res) => {
   try {
     const {originalname, path} = req.file
     const parts = originalname.split(".")
@@ -115,7 +115,7 @@ app.post('/post', upload.single('file'), async (req, res) => {
   }
 })
 
-app.put('/post', upload.single('file'), async (req, res) => {
+app.put('/post', /* upload.single('file'), */ async (req, res) => {
     //res.json({test:5, fileIs:req.file})
     let newPath = null
     if (req.file) {
